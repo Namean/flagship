@@ -1,16 +1,20 @@
 // import logo from './logo.svg';
-import './App.css';
 
-import { Button } from './components/Button.component';
+import React from "react";
+import "./App.css";
+
+import { Header } from "./components/Header.component";
+import { MainContent } from "./components/MainContent.component";
+import { Sidebar } from "./components/Sidebar.component";
+import { FlexContainer } from "./components/FlexContainer.component";
+import { Footer } from "./components/Footer.component";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World!</h1>
-        <h2>Subheading</h2>
-      </header>
-      <Button />
+      <Header />
+      <FlexContainer children={[<Sidebar />, <MainContent />]} />
+      <Footer />
     </div>
   );
 }
