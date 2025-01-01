@@ -18,11 +18,39 @@ function ListElement({ props }) {
   return <li>{props.data}</li>;
 }
 
+const Person = ({ props }) => {
+  const { name, age } = props.data;
+  return (
+    <>
+      <p>{name}</p>
+      <p>{age}</p>
+    </>
+  );
+};
+
 function App() {
+  const people = [
+    {
+      name: "John",
+      age: 28,
+    },
+    {
+      name: "Desmond",
+      age: 30,
+    },
+  ];
   return (
     <div className="App">
-      <List props={{ data: [1, 2, 3], component: ListElement }} />
-      {/* <ListElement props={{ data: "Hello World!" }} /> */}
+      {/* <List props={{ data: [1, 2, 3], component: ListElement }} /> */}
+      {/* <Person props={{ name: "Desmond", age: 30 }} /> */}
+
+      <List
+        props={{
+          data: people,
+          component: Person,
+        }}
+      />
+
       <Header />
 
       {/* <ShoppingList /> */}
