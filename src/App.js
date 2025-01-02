@@ -18,13 +18,13 @@ function ListElement({ props }) {
   return <li>{props.data}</li>;
 }
 
-const Person = ({ props }) => {
+const Person = ({ props, className }) => {
   const { name, age } = props.data;
   return (
-    <>
+    <div className={props.className ? props.className : ""}>
       <p>{name}</p>
       <p>{age}</p>
-    </>
+    </div>
   );
 };
 
@@ -38,10 +38,14 @@ function App() {
       name: "Desmond",
       age: 30,
     },
+    {
+      name: "Andy",
+      age: 42,
+    },
   ];
   return (
     <div className="App">
-      {/* <List props={{ data: [1, 2, 3], component: ListElement }} /> */}
+      <List props={{ data: [1, 2, 3], component: ListElement }} />
       {/* <Person props={{ name: "Desmond", age: 30 }} /> */}
 
       <List
@@ -49,6 +53,7 @@ function App() {
           data: people,
           component: Person,
         }}
+        className={"person"}
       />
 
       <Header />

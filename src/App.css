@@ -64,6 +64,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+.person {
+  color: red;
+}
 /* .App {
   text-align: center;
 }
